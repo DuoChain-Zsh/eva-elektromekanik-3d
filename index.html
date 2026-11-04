@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVA Elektromekanik | 36 kV Monoblok Beton Köşk & Modüler Hücre Teknolojileri</title>
+  <meta name="description" content="EVA Elektromekanik: TEDAŞ MYD ve IEC 62271 standartlarında 36 kV monoblok beton köşkler, prefabrik trafo merkezleri ve modüler orta gerilim hücre sistemleri. İnteraktif 3D diseksiyon ve teklif konfigüratörü.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Three.js (r128) & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- GSAP for Smooth Tweens -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- Tech Grid Background -->
+  <div class="tech-grid-bg"></div>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <a href="#hero" class="nav-logo" aria-label="EVA Elektromekanik Ana Sayfa">
+      <div class="logo-cube">
+        <i data-lucide="box" style="width: 22px; height: 22px;"></i>
+      </div>
+      <div class="logo-text">
+        <span class="logo-brand">EVA</span>
+        <span class="logo-sub">ELEKTROMEKANİK</span>
+      </div>
+    </a>
+
+    <nav role="navigation" aria-label="Ana Menü">
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link"><i data-lucide="zap" style="width: 14px;"></i> Giriş</a></li>
+        <li><a href="#substation3d" class="nav-link"><i data-lucide="layers" style="width: 14px;"></i> 3D Diseksiyon</a></li>
+        <li><a href="#configurator" class="nav-link"><i data-lucide="sliders" style="width: 14px;"></i> 3D Konfigüratör</a></li>
+        <li><a href="#products" class="nav-link"><i data-lucide="cpu" style="width: 14px;"></i> Ürün Ailesi</a></li>
+        <li><a href="#standards" class="nav-link"><i data-lucide="shield-check" style="width: 14px;"></i> Standartlar</a></li>
+        <li><a href="#sectors" class="nav-link"><i data-lucide="activity" style="width: 14px;"></i> Referanslar</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://wa.me/905320000000" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.55rem 0.9rem;" title="Mühendis WhatsApp Hattı">
+        <i data-lucide="message-square" style="width: 16px; color: #10B981;"></i>
+        <span style="display: none; @media(min-width: 1024px){ display: inline; }">WhatsApp</span>
+      </a>
+      <button class="btn btn-primary trigger-quote-modal">
+        <i data-lucide="file-text" style="width: 16px;"></i>
+        <span>Teklif Al</span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- ========================================================================
+         HERO SECTION (High-Tech Engineering & Floating Light Cubes)
+         ======================================================================== -->
+    <section id="hero" class="hero-section" aria-label="Tanıtım Bölümü">
+      <div class="hero-content">
+        <div class="hero-text-col">
+          <div class="hero-badge-wrap">
+            <span class="glass-pill">
+              <i data-lucide="shield" style="width: 13px;"></i>
+              TEDAŞ MYD & IEC 62271 ONAYLI ÜRETİM
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Geleceğin Enerjisini <br>
+            <span class="gradient-text-cyan">36 kV Monoblok Güç</span> İle Şekillendirin
+          </h1>
+
+          <p class="hero-description">
+            EVA Elektromekanik; 2500 kVA'ya kadar monoblok beton köşkler, prefabrik trafo merkezleri ve LSC2B-PM sınıfı orta gerilim modüler şalt hücreleriyle anahtar teslim güvenilirlik sunar.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#substation3d" class="btn btn-primary" style="font-size: 1rem; padding: 0.85rem 1.8rem;">
+              <i data-lucide="box" style="width: 18px;"></i>
+              3D Köşk Diseksiyonunu Keşfet
+            </a>
+            <a href="#configurator" class="btn btn-outline" style="font-size: 1rem; padding: 0.85rem 1.6rem;">
+              <i data-lucide="sliders-horizontal" style="width: 18px;"></i>
+              Teklif Konfigüratörü
+            </a>
+          </div>
+
+          <div class="hero-specs-row">
+            <div class="spec-item">
+              <div class="spec-val">36 <span>kV</span></div>
+              <div class="spec-lbl">Nominal Gerilim</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-val">2500 <span>kVA</span></div>
+              <div class="spec-lbl">Trafo Kapasitesi</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-val">LSC2B <span>PM</span></div>
+              <div class="spec-lbl">Servis Sürekliliği</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-val">20 <span>kA/1s</span></div>
+              <div class="spec-lbl">Dahili Ark Dayanımı</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Hologram Preview Card -->
+        <div class="hero-holo-col">
+          <div class="hero-holo-card">
+            <div class="holo-header">
+              <div class="holo-title">
+                <span class="live-indicator"></span>
+                <span>EVA-MBK 250/720 TELEMETRİ</span>
+              </div>
+              <span class="glass-pill" style="font-size: 0.68rem; padding: 0.2rem 0.6rem;">C35/45 MONOBLOK</span>
+            </div>
+
+            <div class="holo-model-preview">
+              <div class="cube-glow-ambient"></div>
+              <!-- Isometric CSS 3D Light Cube Animation -->
+              <div style="position: relative; width: 140px; height: 140px; transform-style: preserve-3d; transform: rotateX(-20deg) rotateY(45deg); animation: rotateCube 14s infinite linear;">
+                <div style="position: absolute; inset: 0; border: 2px solid #00F2FE; background: rgba(0, 242, 254, 0.12); transform: translateZ(70px); box-shadow: 0 0 20px rgba(0,242,254,0.3); backdrop-filter: blur(4px);"></div>
+                <div style="position: absolute; inset: 0; border: 2px solid #00F2FE; background: rgba(0, 242, 254, 0.12); transform: rotateY(180deg) translateZ(70px); backdrop-filter: blur(4px);"></div>
+                <div style="position: absolute; inset: 0; border: 2px solid #4FACFE; background: rgba(79, 172, 254, 0.15); transform: rotateY(-90deg) translateZ(70px); backdrop-filter: blur(4px);"></div>
+                <div style="position: absolute; inset: 0; border: 2px solid #4FACFE; background: rgba(79, 172, 254, 0.15); transform: rotateY(90deg) translateZ(70px); backdrop-filter: blur(4px);"></div>
+                <div style="position: absolute; inset: 0; border: 2px solid #F59E0B; background: rgba(245, 158, 11, 0.12); transform: rotateX(90deg) translateZ(70px); backdrop-filter: blur(4px);"></div>
+                <div style="position: absolute; inset: 0; border: 2px solid #F59E0B; background: rgba(245, 158, 11, 0.12); transform: rotateX(-90deg) translateZ(70px); backdrop-filter: blur(4px);"></div>
+              </div>
+            </div>
+
+            <style>
+              @keyframes rotateCube {
+                0% { transform: rotateX(-22deg) rotateY(0deg); }
+                100% { transform: rotateX(-22deg) rotateY(360deg); }
+              }
+            </style>
+
+            <div class="holo-metric-grid">
+              <div class="holo-metric">
+                <div class="holo-metric-val">IP54</div>
+                <div class="holo-metric-lbl">Koruma Sınıfı</div>
+              </div>
+              <div class="holo-metric">
+                <div class="holo-metric-val">0.5g</div>
+                <div class="holo-metric-lbl">Sismik Mukavemet</div>
+              </div>
+              <div class="holo-metric">
+                <div class="holo-metric-val">C35/45</div>
+                <div class="holo-metric-lbl">Betonarme Kalitesi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3D SCROLL-DRIVEN EXPLODED BREAKDOWN SECTION ("Köşk ve Hücreyi Aç ve Anlat")
+         ======================================================================== -->
+    <section id="substation3d" class="substation-3d-experience" aria-label="3D İnteraktif Köşk ve Hücre İnceleme">
+      <!-- Pinned 3D Viewport with HUD Controls -->
+      <div class="sticky-viewport">
+        <canvas id="substationCanvas" class="webgl-canvas"></canvas>
+
+        <!-- HUD Layer -->
+        <div class="viewport-hud">
+          <!-- Top HUD Bar -->
+          <div class="hud-top-bar">
+            <div class="hud-title-box">
+              <span class="glass-pill" style="margin-bottom: 0.5rem;">
+                <i data-lucide="layers" style="width: 12px;"></i> CANLI 3D DİSEKSİYON & PARÇA ANATOMİSİ
+              </span>
+              <h2 style="font-size: 1.4rem; color: #FFFFFF; font-family: var(--font-display);">
+                Monoblok Beton Köşk & Modüler Hücre İncelemesi
+              </h2>
+            </div>
+
+            <div class="hud-controls-panel">
+              <!-- View Mode Toggles -->
+              <div class="view-mode-toggles" role="group" aria-label="3D Görünüm Modları">
+                <button class="mode-btn active" data-mode="pbr">
+                  <i data-lucide="eye" style="width: 13px;"></i> Gerçekçi PBR
+                </button>
+                <button class="mode-btn" data-mode="light-cube">
+                  <i data-lucide="box" style="width: 13px;"></i> Işık Küpü (Hologram)
+                </button>
+                <button class="mode-btn" data-mode="wireframe">
+                  <i data-lucide="grid" style="width: 13px;"></i> Teknik CAD Çizim
+                </button>
+              </div>
+
+              <!-- Hotspot Quick Jump Pills -->
+              <div class="hotspot-pills-bar">
+                <button class="hotspot-pill active" data-spot="all">Tüm Köşk</button>
+                <button class="hotspot-pill" data-spot="roof">Çatı & Gövde</button>
+                <button class="hotspot-pill" data-spot="og">EVA+ 36kV Hücreler</button>
+                <button class="hotspot-pill" data-spot="breaker">Vakumlu Kesici</button>
+                <button class="hotspot-pill" data-spot="busbar">Bakır Baralar</button>
+                <button class="hotspot-spot hotspot-pill" data-spot="transformer">Transformatör</button>
+                <button class="hotspot-pill" data-spot="lv">AG Panosu</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom HUD Bar: Exploded Slider & Guidance -->
+          <div class="hud-bottom-bar">
+            <div style="font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="mouse-pointer" style="width: 14px; color: var(--cyan-primary);"></i>
+              <span>3D Fare ile Döndür / Yakınlaştır veya Aşağıya Kaydır</span>
+            </div>
+
+            <div class="explode-controller-box">
+              <div class="explode-label-row">
+                <span>MANUEL PATLATMA KONTROLÜ</span>
+                <span id="explodeValText" style="color: var(--cyan-primary); font-family: var(--font-mono);">0%</span>
+              </div>
+              <input type="range" id="explodeSlider" class="explode-slider" min="0" max="1" step="0.01" value="0" aria-label="3D Patlatma Derecesi">
+            </div>
+
+            <div style="text-align: right;">
+              <button class="btn btn-amber trigger-quote-modal" style="padding: 0.55rem 1.1rem; font-size: 0.82rem;">
+                <i data-lucide="check-circle" style="width: 14px;"></i> Bu Modeli Yapılandır
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll-Driven Storytelling Steps (Triggering 3D Camera & Exploded Lerp) -->
+      <div class="scroll-story-steps">
+        <!-- Step 1 -->
+        <div class="story-step step-left" data-explode="0.0" data-spot="all">
+          <div class="story-card">
+            <div class="story-step-badge">
+              <i data-lucide="shield" style="width: 14px;"></i> ADIM 01 / C35/45 MONOBLOK GÖVDE
+            </div>
+            <h3 class="story-title">Yekpare Döküm Monoblok Beton Zırh</h3>
+            <p class="story-desc">
+              C35/45 kalitesinde su geçirimsiz hazır beton ile monoblok olarak dökülen dış gövde; aşırı iklim koşullarına, yüksek korozyona ve 0.5g deprem ivmesine tam dayanıklıdır.
+            </p>
+            <ul class="story-features-list">
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>IP23D / IP54 eloksallı doğal havalandırma panjurları</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>Çift noktadan kilitlemeli, elektrostatik boyalı çelik emniyet kapıları</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>Entegre kablo bodrumu ve trafo yağ toplama havuzu</span>
+              </li>
+            </ul>
+            <div class="story-tech-specs">
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">STANDART</div>
+                <div class="story-tech-val">IEC 62271-202</div>
+              </div>
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">BETON DAYANIMI</div>
+                <div class="story-tech-val">C35/45 (45 MPa)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="story-step step-right" data-explode="0.3" data-spot="roof">
+          <div class="story-card">
+            <div class="story-step-badge">
+              <i data-lucide="layout-grid" style="width: 14px;"></i> ADIM 02 / İÇ BÖLMELENDİRME
+            </div>
+            <h3 class="story-title">Çatı Açılır: 3 Bağımsız Yangın Kompartmanı</h3>
+            <p class="story-desc">
+              Sayfa aşağı kaydıkça monoblok beton çatı yükselir ve ön kapılar 110° açılarak köşkün 3 ana elektriksel bölmesini gözler önüne serer. Her bölme yangına dayanıklı betonarme duvarlarla tamamen yalıtılmıştır.
+            </p>
+            <ul class="story-features-list">
+              <li class="story-feature-item">
+                <i data-lucide="zap" style="width: 16px;"></i>
+                <span><strong>Bölme 1:</strong> Orta Gerilim Modüler Şalt Hücreleri Odası</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="cpu" style="width: 16px;"></i>
+                <span><strong>Bölme 2:</strong> 2500 kVA Güç Dağıtım Trafosu Odası</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="sliders" style="width: 16px;"></i>
+                <span><strong>Bölme 3:</strong> Alçak Gerilim Dağıtım & Kompanzasyon Panosu</span>
+              </li>
+            </ul>
+            <div class="story-tech-specs">
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">YANGIN İZOLASYONU</div>
+                <div class="story-tech-val">REI 120 Dakika</div>
+              </div>
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">KÖŞK EN X BOY</div>
+                <div class="story-tech-val">2.5 x 7.2 m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="story-step step-left" data-explode="0.6" data-spot="og">
+          <div class="story-card">
+            <div class="story-step-badge">
+              <i data-lucide="box" style="width: 14px;"></i> ADIM 03 / EVA+ 36 kV ŞALT SİSTEMİ
+            </div>
+            <h3 class="story-title">Metal Mahfazalı Modüler Hücre Grubu</h3>
+            <p class="story-desc">
+              Hücre grubu dış gövdeden öne doğru ayrılarak incelenir. 12 kV'dan 36 kV'a kadar sekonder dağıtım şebekelerinde, güneş/rüzgar santrallerinde maksimum personel emniyeti sağlar.
+            </p>
+            <ul class="story-features-list">
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span><strong>LSC2B-PM Sınıfı:</strong> Hücreye müdahale anında komşu hücrelerde kesintisiz enerji</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span><strong>IAC AFLR 20kA 1s:</strong> Dahili ark patlamalarına karşı 4 yönden operatör güvenliği</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>Giriş-Çıkış, Vakumlu Kesicili Trafo Koruma ve Gerilim Ölçü hücreleri</span>
+              </li>
+            </ul>
+            <div class="story-tech-specs">
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">NOMİNAL AKIM</div>
+                <div class="story-tech-val">630A - 1250A</div>
+              </div>
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">KISA DEVRE AKIMI</div>
+                <div class="story-tech-val">16 kA / 20 kA (3s)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="story-step step-right" data-explode="0.85" data-spot="breaker">
+          <div class="story-card">
+            <div class="story-step-badge">
+              <i data-lucide="activity" style="width: 14px;"></i> ADIM 04 / HÜCRE İÇ ANATOMİSİ
+            </div>
+            <h3 class="story-title">Hücrenin 4 Bağımsız Bölmesi Patlatılır</h3>
+            <p class="story-desc">
+              Merkezdeki EVA+ Hücresi açılarak iç mekanizması katman katman ayrışır:
+            </p>
+            <ul class="story-features-list">
+              <li class="story-feature-item">
+                <i data-lucide="chevron-right" style="width: 16px; color: var(--amber-energy);"></i>
+                <span><strong>1. Üst Bara Bölmesi:</strong> Elektrolitik bakır Cu baralar ve epoksi mesnet izolatörleri</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="chevron-right" style="width: 16px; color: var(--amber-energy);"></i>
+                <span><strong>2. Vakumlu Kesici Bölmesi:</strong> Yay kurmalı mekanizma, seramik vakum tüpleri ve mekanik kilitlemeler</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="chevron-right" style="width: 16px; color: var(--amber-energy);"></i>
+                <span><strong>3. Kablo & Trafo Bölmesi:</strong> Toroidal akım/gerilim trafoları, topraklama ayırıcısı ve kablo başlıkları</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="chevron-right" style="width: 16px; color: var(--amber-energy);"></i>
+                <span><strong>4. Sekonder Kumanda Dolabı:</strong> Sayısal mikroişlemcili koruma rölesi ve LED mimik diyagram</span>
+              </li>
+            </ul>
+            <div class="story-tech-specs">
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">KESİCİ TEKNOLOJİSİ</div>
+                <div class="story-tech-val">Vakum / SF6 Gazlı</div>
+              </div>
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">MEKANİK ÖMÜR</div>
+                <div class="story-tech-val">M2 Sınıfı (10.000 Açma)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="story-step step-left" data-explode="1.0" data-spot="transformer">
+          <div class="story-card">
+            <div class="story-step-badge">
+              <i data-lucide="zap" style="width: 14px;"></i> ADIM 05 / TRAFO & AKILLI AG DAĞITIM
+            </div>
+            <h3 class="story-title">Dağıtım Trafosu ve SCADA Uyumlu AG Panosu</h3>
+            <p class="story-desc">
+              Orta gerilimi 0.4 kV alçak gerilime dönüştüren güç trafosu ile fabrikanın veya şebekenin kalbini besleyen akıllı AG panosu entegrasyonu.
+            </p>
+            <ul class="story-features-list">
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>400 kVA - 2500 kVA Hermetik Yağlı veya Kuru Tip (Cast Resin) seçenekleri</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>Titreşim sönümleyici montaj rayları ve yağ toplama tavası</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>Kompakt şalterli, dikey sigortalı yük ayırıcılı ve otomatik kompanzasyonlu AG panosu</span>
+              </li>
+              <li class="story-feature-item">
+                <i data-lucide="check" style="width: 16px;"></i>
+                <span>SCADA / RTU uzaktan izleme ve akıllı şebeke haberleşme protokolleri</span>
+              </li>
+            </ul>
+            <div class="story-tech-specs">
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">TRAFO VERİMİ</div>
+                <div class="story-tech-val">Tier 2 EcoDesign</div>
+              </div>
+              <div class="story-tech-cell">
+                <div class="story-tech-lbl">KOMPANZASYON</div>
+                <div class="story-tech-val">Tristörlü Hızlı Kademe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         INTERACTIVE 3D KÖŞK & HÜCRE CONFIGURATOR (CPQ & RFQ MOTORU)
+         ======================================================================== -->
+    <section id="configurator" class="configurator-section" aria-label="3D Köşk Konfigüratörü">
+      <div class="section-header-center">
+        <span class="glass-pill"><i data-lucide="cpu" style="width: 12px;"></i> DİNAMİK MÜHENDİSLİK HESAPLAYICI</span>
+        <h2 class="section-title">Köşk ve Şalt Sisteminizi Yapılandırın</h2>
+        <p class="section-subtitle">
+          Projenizin teknik parametrelerini seçin; anlık dış boyut, ağırlık ve şartname kodunu görüntüleyin. 24 saat içinde resmi fiyat teklifinizi alın.
+        </p>
+      </div>
+
+      <div class="configurator-grid">
+        <!-- Step by Step Options Column -->
+        <div class="config-steps-col">
+          <!-- Step 1: Kiosk Type -->
+          <div class="glass-panel config-step-card">
+            <h3 class="config-step-title">
+              <span class="step-num">1</span>
+              <span>Köşk Gövde Tipi</span>
+            </h3>
+            <div class="option-cards-grid">
+              <button class="config-option-btn selected" data-group="kiosk" data-value="monoblock">
+                <span class="opt-badge">EN ÇOK TERCİH EDİLEN</span>
+                <span class="opt-name">Monoblok Beton Köşk</span>
+                <span class="opt-desc">C35/45 yekpare döküm, IEC 62271-202 ve TEDAŞ onaylı, 2500 kVA'ya kadar</span>
+              </button>
+              <button class="config-option-btn" data-group="kiosk" data-value="prefab">
+                <span class="opt-name">Prefabrik Beton Köşk</span>
+                <span class="opt-desc">Genişletilebilir modüler mimari, büyük sanayi tesisleri ve çoklu hücreler</span>
+              </button>
+              <button class="config-option-btn" data-group="kiosk" data-value="steel">
+                <span class="opt-name">Kompakt Sac Köşk</span>
+                <span class="opt-desc">Hafif çelik galvaniz konstrüksiyon, mobil ve geçici şantiye dağıtımı</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Transformer Capacity -->
+          <div class="glass-panel config-step-card">
+            <h3 class="config-step-title">
+              <span class="step-num">2</span>
+              <span>Dağıtım Transformatör Gücü (kVA)</span>
+            </h3>
+            <div class="option-cards-grid">
+              <button class="config-option-btn" data-group="power" data-value="400">
+                <span class="opt-name">400 kVA</span>
+                <span class="opt-desc">Küçük işletmeler & ticari binalar</span>
+              </button>
+              <button class="config-option-btn" data-group="power" data-value="630">
+                <span class="opt-name">630 kVA</span>
+                <span class="opt-desc">Orta ölçekli üretim tesisleri</span>
+              </button>
+              <button class="config-option-btn" data-group="power" data-value="1000">
+                <span class="opt-name">1000 kVA</span>
+                <span class="opt-desc">Standart OSB fabrika beslemesi</span>
+              </button>
+              <button class="config-option-btn selected" data-group="power" data-value="1600">
+                <span class="opt-badge">OPTIMAL</span>
+                <span class="opt-name">1600 kVA</span>
+                <span class="opt-desc">Büyük sanayi & AVM kompleksleri</span>
+              </button>
+              <button class="config-option-btn" data-group="power" data-value="2500">
+                <span class="opt-name">2500 kVA</span>
+                <span class="opt-desc">Yüksek güç GES / RES santralleri</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Switchgear Layout -->
+          <div class="glass-panel config-step-card">
+            <h3 class="config-step-title">
+              <span class="step-num">3</span>
+              <span>Orta Gerilim Hücre Kombinasyonu</span>
+            </h3>
+            <div class="option-cards-grid">
+              <button class="config-option-btn selected" data-group="cells" data-value="standard">
+                <span class="opt-name">Standart Trafo Koruma (3 Hücre)</span>
+                <span class="opt-desc">2x Yük Ayırıcılı Giriş-Çıkış + 1x Vakumlu Kesicili Trafo Koruma</span>
+              </button>
+              <button class="config-option-btn" data-group="cells" data-value="extended">
+                <span class="opt-name">Genişletilmiş Dağıtım (5 Hücre)</span>
+                <span class="opt-desc">3x Giriş-Çıkış + 1x Kesicili Trafo Koruma + 1x Gerilim Ölçü</span>
+              </button>
+              <button class="config-option-btn" data-group="cells" data-value="ring">
+                <span class="opt-name">Ring Ana Dağıtım (4 Hücre)</span>
+                <span class="opt-desc">2x Kesicili Ring Girişi + 1x Trafo Çıkışı + 1x Kuplaj Hücresi</span>
+              </button>
+              <button class="config-option-btn" data-group="cells" data-value="solar">
+                <span class="opt-name">GES / RES Santral Paketi (6 Hücre)</span>
+                <span class="opt-desc">Çift fiderli yüksek kesintili trafo çıkışları ve çift yönlü sayaç ölçü</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Addon Options -->
+          <div class="glass-panel config-step-card">
+            <h3 class="config-step-title">
+              <span class="step-num">4</span>
+              <span>Ekipman & Akıllı Şebeke Opsiyonları</span>
+            </h3>
+            <div class="option-cards-grid">
+              <button class="config-option-btn" data-group="option" data-value="schneider">
+                <span class="opt-name">Schneider Inside Donanım</span>
+                <span class="opt-desc">Schneider Electric bileşenleriyle modüler mimari</span>
+              </button>
+              <button class="config-option-btn selected" data-group="option" data-value="scada">
+                <span class="opt-badge">SEÇİLDİ</span>
+                <span class="opt-name">SCADA / RTU Telemetri</span>
+                <span class="opt-desc">Modbus/IEC 104 uzaktan izleme ve açma-kapama</span>
+              </button>
+              <button class="config-option-btn" data-group="option" data-value="fireSuppression">
+                <span class="opt-name">Aerosol Otomatik Yangın Söndürme</span>
+                <span class="opt-desc">Trafo ve hücre kompartmanlarına özel gazlı koruma</span>
+              </button>
+              <button class="config-option-btn selected" data-group="option" data-value="smartMeter">
+                <span class="opt-badge">SEÇİLDİ</span>
+                <span class="opt-name">Akıllı Enerji Kalitesi Analizörü</span>
+                <span class="opt-desc">Harmonik ölçümü, akım/gerilim kayıt hafızası</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Summary & Instant Quote Card -->
+        <div class="config-summary-col">
+          <div class="glass-panel config-summary-panel">
+            <div class="summary-header">
+              <span class="glass-pill" style="margin-bottom: 0.5rem;">ÖZET VE TEKNİK ŞARTNAME</span>
+              <h3 class="summary-title" id="cfgKioskName">Monoblok Beton Köşk (EVA-MBK)</h3>
+              <div class="summary-code" id="cfgModelCode">EVA-MBK-36kV-1600kVA-STANDARD</div>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-lbl">Nominal Gerilim</span>
+              <span class="summary-val">36 kV (50 Hz)</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-lbl">Trafo Kapasitesi</span>
+              <span class="summary-val" id="cfgPowerVal">1600 kVA (36 kV / 0.4 kV)</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-lbl">Hücre Konfigürasyonu</span>
+              <span class="summary-val" id="cfgCellsVal" style="max-width: 220px; font-size: 0.8rem;">2x EVA-GÇ + 1x EVA-K</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-lbl">Dış Boyutlar (ExBxY)</span>
+              <span class="summary-val" id="cfgDimsVal">2.5 x 7.2 x 2.6 m</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-lbl">Tahmini Teslimat Süresi</span>
+              <span class="summary-val" id="cfgDeliveryVal" style="color: var(--emerald-live);">14-21 İş Günü</span>
+            </div>
+
+            <div class="summary-metrics-box">
+              <div>
+                <div class="sum-metric-val" id="cfgWeightVal">~24.2 Ton</div>
+                <div class="sum-metric-lbl">Toplam Çalışma Ağırlığı</div>
+              </div>
+              <div>
+                <div class="sum-metric-val">IP54 / IP23D</div>
+                <div class="sum-metric-lbl">Koruma Seviyesi</div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <button class="btn btn-primary trigger-quote-modal" style="width: 100%;">
+                <i data-lucide="file-check" style="width: 18px;"></i>
+                <span>Resmi Fiyat Teklifi Talep Et</span>
+              </button>
+
+              <button id="whatsappQuoteBtn" class="btn btn-outline" style="width: 100%; border-color: rgba(16, 185, 129, 0.4); color: #10B981;">
+                <i data-lucide="message-circle" style="width: 18px;"></i>
+                <span>WhatsApp ile Doğrudan Mühendise İlet</span>
+              </button>
+            </div>
+
+            <div style="margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+              * Tüm ürünler TEDAŞ MYD şartnamesi ve TSE K 335 uyarınca tip testlidir.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PRODUCT PORTFOLIO & BENTO GRID
+         ======================================================================== -->
+    <section id="products" class="products-section" aria-label="Ürün Portföyü">
+      <div class="section-header-center">
+        <span class="glass-pill"><i data-lucide="layers" style="width: 12px;"></i> ÜRÜN GAMIMIZ</span>
+        <h2 class="section-title">EVA Elektromekanik Ürün Ailesi</h2>
+        <p class="section-subtitle">
+          Orta gerilim enerji dağıtımında ihtiyaç duyulan tüm trafo merkezleri, modüler hücreler ve şalt panoları tek çatı altında üretilir.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento 1: Monoblock -->
+        <div class="glass-panel bento-card bento-col-8">
+          <div>
+            <div class="bento-tag">EVA-MBK SERİSİ</div>
+            <h3 class="bento-title">Monoblok Beton Trafo Merkezleri</h3>
+            <p class="bento-desc">
+              TEDAŞ MYD/96-32.B şartnamesine ve IEC 62271-202 standardına uygun, 2500 kVA'ya kadar güç transformatörlerini ve orta gerilim şalt ekipmanlarını tek parça monoblok gövdede barındıran kompakt çözüm.
+            </p>
+            <div class="bento-specs-chips">
+              <span class="spec-chip">36 kV Max Gerilim</span>
+              <span class="spec-chip">C35/45 Betonarme</span>
+              <span class="spec-chip">IP54 / IP23D</span>
+              <span class="spec-chip">0.5g Deprem Mukavemeti</span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline trigger-quote-modal" style="font-size: 0.85rem;">Şartname ve Teklif İste</button>
+          </div>
+        </div>
+
+        <!-- Bento 2: Modular Switchgear -->
+        <div class="glass-panel bento-card bento-col-4">
+          <div>
+            <div class="bento-tag">EVA+ 36 kV</div>
+            <h3 class="bento-title">Metal Mahfazalı Modüler Hücreler (MMMH)</h3>
+            <p class="bento-desc">
+              LSC2B-PM servis sürekliliği sınıfı ve IAC AFLR 20kA 1s iç ark dayanımı ile maksimum operatör güvenliği.
+            </p>
+            <div class="bento-specs-chips">
+              <span class="spec-chip">630A - 1250A</span>
+              <span class="spec-chip">LSC2B-PM</span>
+              <span class="spec-chip">Vakum / SF6</span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline trigger-quote-modal" style="font-size: 0.85rem;">Detaylı İncele</button>
+          </div>
+        </div>
+
+        <!-- Bento 3: Prefab Kiosks -->
+        <div class="glass-panel bento-card bento-col-4">
+          <div>
+            <div class="bento-tag">EVA-PBK SERİSİ</div>
+            <h3 class="bento-title">Prefabrik Beton Trafo Binaları</h3>
+            <p class="bento-desc">
+              Sahada modüler olarak monte edilen, çoklu hücre grupları ve yüksek güçlü çift trafo konfigürasyonları için geniş iç hacimli yapılar.
+            </p>
+            <div class="bento-specs-chips">
+              <span class="spec-chip">Modüler Genişleme</span>
+              <span class="spec-chip">Çift Trafo Alanı</span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline trigger-quote-modal" style="font-size: 0.85rem;">Teknik Veri Sayfası</button>
+          </div>
+        </div>
+
+        <!-- Bento 4: Compact Steel Kiosks -->
+        <div class="glass-panel bento-card bento-col-4">
+          <div>
+            <div class="bento-tag">EVA-SAC SERİSİ</div>
+            <h3 class="bento-title">Kompakt Sac Köşkler & Mobil Şalt</h3>
+            <p class="bento-desc">
+              Sıcak daldırma galvaniz çelik veya sandviç panel kaplamalı, hafif ve taşınabilir geçici veya kalıcı enerji dağıtım merkezleri.
+            </p>
+            <div class="bento-specs-chips">
+              <span class="spec-chip">Hafif Konstrüksiyon</span>
+              <span class="spec-chip">Mobil Uyumlu</span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline trigger-quote-modal" style="font-size: 0.85rem;">Teknik Çizim İste</button>
+          </div>
+        </div>
+
+        <!-- Bento 5: Low Voltage Panels -->
+        <div class="glass-panel bento-card bento-col-4">
+          <div>
+            <div class="bento-tag">EVA-AG DAĞITIM</div>
+            <h3 class="bento-title">Akıllı AG Dağıtım & Kompanzasyon</h3>
+            <p class="bento-desc">
+              4000A'e kadar Form 2b/Form 4b panolar, otomatik kompanzasyon grupları, RTU telemetri ve enerji kalitesi sayaçları.
+            </p>
+            <div class="bento-specs-chips">
+              <span class="spec-chip">Form 4b</span>
+              <span class="spec-chip">Tristörlü Kompanzasyon</span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline trigger-quote-modal" style="font-size: 0.85rem;">Pano Detayları</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TECHNICAL STANDARDS & CERTIFICATIONS TABLE
+         ======================================================================== -->
+    <section id="standards" class="products-section" style="padding-top: 2rem;" aria-label="Teknik Standartlar">
+      <div class="section-header-center">
+        <span class="glass-pill"><i data-lucide="check-check" style="width: 12px;"></i> KALİTE VE BELGELENDİRME</span>
+        <h2 class="section-title">Uluslararası Tip Test & Standartlar</h2>
+        <p class="section-subtitle">
+          Tüm ürünlerimiz akredite bağımsız laboratuvarlarda (CESI, KEMA, IPH, TSE) tip testlerinden başarıyla geçmiştir.
+        </p>
+      </div>
+
+      <div class="standards-table-wrap">
+        <table class="standards-table">
+          <thead>
+            <tr>
+              <th>Standart / Şartname</th>
+              <th>Kapsam</th>
+              <th>Test & Dayanım Kriteri</th>
+              <th>Durum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>IEC 62271-202</strong></td>
+              <td>Yüksek Gerilim / Alçak Gerilim Prefabrik Trafo Merkezleri</td>
+              <td>IP Koruma, Isınma, Mekanik Mukavemet, Ses İzolasyonu</td>
+              <td><span class="status-badge-ok"><i data-lucide="check" style="width: 12px;"></i> Akredite Onaylı</span></td>
+            </tr>
+            <tr>
+              <td><strong>IEC 62271-200</strong></td>
+              <td>A.C. Metal Mahfazalı Anahtarlama ve Kontrol Donanımı</td>
+              <td>LSC2B-PM, IAC AFLR 20kA 1s İç Ark Testi</td>
+              <td><span class="status-badge-ok"><i data-lucide="check" style="width: 12px;"></i> Akredite Onaylı</span></td>
+            </tr>
+            <tr>
+              <td><strong>TEDAŞ MYD/96-32.B</strong></td>
+              <td>Monoblok Beton Köşk Teknik Şartnamesi</td>
+              <td>Şebeke Dağıtım Şirketleri Tip Onayı (TEDAŞ)</td>
+              <td><span class="status-badge-ok"><i data-lucide="check" style="width: 12px;"></i> TEDAŞ Onaylı</span></td>
+            </tr>
+            <tr>
+              <td><strong>TSE K 335</strong></td>
+              <td>Monoblok Beton Mahfazalı Kompakt Trafo Merkezleri</td>
+              <td>Basınç, Su Sızdırmazlık, Donma-Çözülme ve Sismik Testler</td>
+              <td><span class="status-badge-ok"><i data-lucide="check" style="width: 12px;"></i> TSE Belgeli</span></td>
+            </tr>
+            <tr>
+              <td><strong>ISO 9001 / 14001 / 45001</strong></td>
+              <td>Entegre Kalite, Çevre ve İş Sağlığı Güvenliği Yönetimi</td>
+              <td>TÜV Rheinland Denetimli Fabrika Üretim Süreçleri</td>
+              <td><span class="status-badge-ok"><i data-lucide="check" style="width: 12px;"></i> Sertifikalı</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTOR APPLICATIONS & CASE STUDIES
+         ======================================================================== -->
+    <section id="sectors" class="sectors-section" aria-label="Uygulama Alanları">
+      <div class="section-header-center">
+        <span class="glass-pill"><i data-lucide="activity" style="width: 12px;"></i> SEKTÖREL ÇÖZÜMLER</span>
+        <h2 class="section-title">Kritik Enerji Altyapılarında EVA Güvencesi</h2>
+        <p class="section-subtitle">
+          Kesintisiz güç sürekliliği gerektiren endüstriyel tesisler, yenilenebilir santraller ve raylı sistemlerde kanıtlanmış performans.
+        </p>
+      </div>
+
+      <div class="sector-cards-grid">
+        <div class="glass-panel sector-card">
+          <div class="sector-icon-box">
+            <i data-lucide="sun" style="width: 24px;"></i>
+          </div>
+          <h3 class="sector-name">Güneş & Rüzgar (GES/RES)</h3>
+          <p class="sector-desc">
+            36 kV çift fiderli trafo köşkleri, çift yönlü OG ölçü panoları ve inverter çıkışlarına uygun özel tasarımlar.
+          </p>
+        </div>
+
+        <div class="glass-panel sector-card">
+          <div class="sector-icon-box">
+            <i data-lucide="factory" style="width: 24px;"></i>
+          </div>
+          <h3 class="sector-name">Organize Sanayi (OSB)</h3>
+          <p class="sector-desc">
+            Ağır sanayi yüklerine uygun, kompanzasyonlu, yüksek kısa devre dayanımlı kompakt trafo merkezleri.
+          </p>
+        </div>
+
+        <div class="glass-panel sector-card">
+          <div class="sector-icon-box">
+            <i data-lucide="train" style="width: 24px;"></i>
+          </div>
+          <h3 class="sector-name">Raylı Sistemler & Metro</h3>
+          <p class="sector-desc">
+            Cer gücü besleme trafo köşkleri, tünel içi orta gerilim anahtarlama ve yangına tam dayanıklı hücreler.
+          </p>
+        </div>
+
+        <div class="glass-panel sector-card">
+          <div class="sector-icon-box">
+            <i data-lucide="server" style="width: 24px;"></i>
+          </div>
+          <h3 class="sector-name">Veri Merkezleri (Tier 3/4)</h3>
+          <p class="sector-desc">
+            Yedekli fider geçişli kuplaj hücreleri, mikroişlemcili otomatik transfer sistemleri ve 0 ms kesinti güvenliği.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       RFQ & INSTANT QUOTE MODAL DIALOG
+       ======================================================================== -->
+  <div id="quoteModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button id="closeQuoteModal" class="modal-close-btn" aria-label="Kapat">
+        <i data-lucide="x" style="width: 18px;"></i>
+      </button>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span class="glass-pill" style="margin-bottom: 0.5rem;">HIZLI TEKLİF & TEKNİK ŞARTNAME TALEBİ</span>
+        <h3 id="modalTitle" style="font-size: 1.5rem; color: #FFFFFF;">Resmi Fiyat Teklifi İsteyin</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+          Mühendislerimiz projenizin tek hat şemasına uygun fiyat teklifi ve teknik çizimleri 24 saat içinde iletsin.
+        </p>
+      </div>
+
+      <form id="rfqForm">
+        <div class="form-group">
+          <label class="form-label" for="modalSelectedConfig">Seçilen Konfigürasyon Kodu</label>
+          <input type="text" id="modalSelectedConfig" class="form-control" style="font-family: var(--font-mono); color: var(--cyan-primary); font-weight: 700;" readonly value="EVA-MBK-36kV-1600kVA-STANDARD">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fullName">Ad Soyad *</label>
+            <input type="text" id="fullName" class="form-control" placeholder="Örn: Ahmet Yılmaz" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="companyName">Firma / Kurum Adı *</label>
+            <input type="text" id="companyName" class="form-control" placeholder="Örn: Enerji Dağıtım A.Ş." required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="emailAddr">E-Posta Adresi *</label>
+            <input type="email" id="emailAddr" class="form-control" placeholder="ahmet@sirketiniz.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phoneNum">Telefon / GSM *</label>
+            <input type="tel" id="phoneNum" class="form-control" placeholder="0532 XXX XX XX" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="projectNotes">Proje Yeri ve Özel Şartname Notları</label>
+          <textarea id="projectNotes" class="form-control" rows="3" placeholder="Örn: Ankara OSB projesi, 1600 kVA trafo köşkünün temmuz sonu teslimatı, TEDAŞ kabulü için tek hat şeması ektedir..."></textarea>
+        </div>
+
+        <div style="margin-top: 1.75rem; display: flex; gap: 1rem; align-items: center;">
+          <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.85rem;">
+            <i data-lucide="send" style="width: 16px;"></i>
+            <span>Teklif Talebini Gönder</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom: 1.25rem;">
+          <div class="logo-cube">
+            <i data-lucide="box" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand">EVA</span>
+            <span class="logo-sub">ELEKTROMEKANİK</span>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 1.5rem;">
+          EVA Elektromekanik; Türkiye ve dünyada orta gerilim şalt tesisleri, beton köşkler ve enerji iletim projeleri için yüksek mühendislik kalitesi üretir.
+        </p>
+        <div style="display: flex; gap: 0.75rem;">
+          <span class="glass-pill" style="font-size: 0.7rem;">%100 YERLİ MÜHENDİSLİK</span>
+          <span class="glass-pill" style="font-size: 0.7rem;">ANKARA / SARAY FABRİKA</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Ürünler</h4>
+        <ul class="footer-links">
+          <li><a href="#products" class="footer-link">Monoblok Beton Köşkler</a></li>
+          <li><a href="#products" class="footer-link">Prefabrik Trafo Merkezleri</a></li>
+          <li><a href="#products" class="footer-link">EVA+ 36 kV Modüler Hücreler</a></li>
+          <li><a href="#products" class="footer-link">Kompakt Sac Köşkler</a></li>
+          <li><a href="#products" class="footer-link">AG Dağıtım & Kompanzasyon</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Hızlı Bağlantılar</h4>
+        <ul class="footer-links">
+          <li><a href="#substation3d" class="footer-link">3D Diseksiyon İncelemesi</a></li>
+          <li><a href="#configurator" class="footer-link">Köşk Konfigüratörü</a></li>
+          <li><a href="#standards" class="footer-link">Tip Testleri & Standartlar</a></li>
+          <li><a href="#sectors" class="footer-link">Sektörel Referanslar</a></li>
+          <li><a href="#" class="footer-link trigger-quote-modal">Resmi Fiyat Teklifi Al</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">İletişim & Fabrika</h4>
+        <ul class="footer-links" style="font-size: 0.85rem; color: var(--text-muted);">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;">
+            <i data-lucide="map-pin" style="width: 16px; color: var(--cyan-primary); flex-shrink: 0; margin-top: 0.2rem;"></i>
+            <span>Saray Sanayi Bölgesi, Akyurt / Ankara - TÜRKİYE</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;">
+            <i data-lucide="phone" style="width: 16px; color: var(--cyan-primary); flex-shrink: 0;"></i>
+            <span>+90 (312) 800 00 00</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;">
+            <i data-lucide="mail" style="width: 16px; color: var(--cyan-primary); flex-shrink: 0;"></i>
+            <span>satis@evaelektromekanik.com</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;">
+            <i data-lucide="clock" style="width: 16px; color: var(--cyan-primary); flex-shrink: 0;"></i>
+            <span>Hafta İçi: 08:30 - 18:00 (7/24 Teknik Destek)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 EVA Elektromekanik San. ve Tic. A.Ş. Tüm hakları saklıdır.
+      </div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="#" class="footer-link">Gizlilik Politikası</a>
+        <a href="#" class="footer-link">KVKK Aydınlatma</a>
+        <a href="#" class="footer-link">Teknik Şartnameler</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="substation-3d.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
